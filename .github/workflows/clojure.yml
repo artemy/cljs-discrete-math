@@ -55,5 +55,4 @@ jobs:
     - name: Git Commit and Push
       run: |
         git add docs
-        git commit -m "Update github pages"
-        git push
+        git diff-index --quiet HEAD || (git commit -m "Update github pages" && git push)
